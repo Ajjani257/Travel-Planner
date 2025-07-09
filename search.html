@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Places - Travel Planner</title>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Vollkorn', serif;
+        }
+
+        .search-button {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Vollkorn', serif;
+        }
+
+        .search-button:hover {
+            background-color: #45a049;
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .place-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .place-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .error-message {
+            color: #ff0000;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="open-navbar-icon navbar-icon center">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <div class="close-navbar-icon navbar-icon center">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                </div>
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link center">Home</a>
+                    <a href="tours.html" class="nav-link center">Tours</a>
+                    <a href="expense-tracker.html" class="nav-link center">Expense</a>
+                    <a href="translator.html" class="nav-link center">Translator</a>
+                    <a href="currency-converter.html" class="nav-link center">Currency</a>
+                    <a href="weather.html" class="nav-link center">Weather</a>
+                    <a href="search.html" class="nav-link center">Search</a>
+                    <a href="about-us-page.html" class="nav-link center">About Us</a>
+                    <a href="contact-us-page.html" class="nav-link center">Contact</a>
+                </div>
+            </nav>
+        </div>
+        
+        <header class="header-1">
+            <div class="logo" class="header center">
+                <h1>
+                    <span class="center">t</span>
+                    <span class="center">r</span>
+                    <span class="center">a</span>
+                    <span class="center">v</span>
+                    <span class="center">e</span>
+                    <span class="center">l</span>
+                    <span class="center">.</span>
+                    <span class="center">p</span>
+                    <span class="center">l</span>
+                    <span class="center">a</span>
+                    <span class="center">n</span>
+                    <span class="center">n</span>
+                    <span class="center">e</span>
+                    <span class="center">r</span>
+                </h1>
+            </div>
+        </header>
+
+        
+        <div class="search-container">
+            <h1 class="popular-tours-heading">Search Places</h1>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Enter a place name..." id="searchInput">
+                <button class="search-button" onclick="searchPlaces()">Search</button>
+            </div>
+            <div id="loading" class="loading" style="display: none;">Searching...</div>
+            <div id="error" class="error-message" style="display: none;"></div>
+            <div id="results" class="results-container"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-list">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="tours.html" class="footer-link">Tours</a>
+                <a href="about-us-page.html" class="footer-link">About Us</a>
+                <a href="contact-us-page.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-paragraph">
+                &copy; Travel Planner DE Project
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const API_KEY = '55c2a30e2d91446b984b499148a69b3d';
+        const resultsContainer = document.getElementById('results');
+        const loadingElement = document.getElementById('loading');
+        const errorElement = document.getElementById('error');
+
+        async function searchPlaces() {
+            const searchInput = document.getElementById('searchInput').value;
+            if (!searchInput.trim()) {
+                showError('Please enter a place name');
+                return;
+            }
+
+            loadingElement.style.display = 'block';
+            errorElement.style.display = 'none';
+            resultsContainer.innerHTML = '';
+
+            try {
+                // First, get the coordinates for the search term
+                const geocodeResponse = await fetch(`https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(searchInput)}&apiKey=${API_KEY}`);
+                const geocodeData = await geocodeResponse.json();
+
+                if (!geocodeData.features || geocodeData.features.length === 0) {
+                    showError('Location not found. Please try a different search term.');
+                    return;
+                }
+
+                // Get the first result's coordinates
+                const [lon, lat] = geocodeData.features[0].geometry.coordinates;
+
+                // Now search for places near these coordinates
+                const placesResponse = await fetch(`https://api.geoapify.com/v2/places?categories=tourism,accommodation,entertainment&filter=circle:${lon},${lat},5000&bias=proximity:${lon},${lat}&limit=20&apiKey=${API_KEY}`);
+                const placesData = await placesResponse.json();
+
+                if (placesData.features && placesData.features.length > 0) {
+                    displayResults(placesData.features);
+                } else {
+                    showError('No tourist places found near this location');
+                }
+            } catch (error) {
+                showError('Error fetching places. Please try again.');
+                console.error('Error:', error);
+            } finally {
+                loadingElement.style.display = 'none';
+            }
+        }
+
+        function displayResults(places) {
+            resultsContainer.innerHTML = places.map(place => `
+                <div class="place-card">
+                    <h3>${place.properties.name || 'Unnamed Place'}</h3>
+                    <p><strong>Type:</strong> ${place.properties.type || 'N/A'}</p>
+                    <p><strong>Category:</strong> ${place.properties.categories?.main || 'N/A'}</p>
+                    <p><strong>Address:</strong> ${place.properties.formatted || 'N/A'}</p>
+                    ${place.properties.phone ? `<p><strong>Phone:</strong> ${place.properties.phone}</p>` : ''}
+                    ${place.properties.website ? `<p><strong>Website:</strong> <a href="${place.properties.website}" target="_blank">Visit Website</a></p>` : ''}
+                    ${place.properties.opening_hours ? `<p><strong>Opening Hours:</strong> ${place.properties.opening_hours}</p>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function showError(message) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        // Add event listener for Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchPlaces();
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner - Weather Report</title>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="open-navbar-icon navbar-icon center">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <div class="close-navbar-icon navbar-icon center">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                </div>
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link center">Home</a>
+                    <a href="tours.html" class="nav-link center">Tours</a>
+                    <a href="expense-tracker.html" class="nav-link center">Expense</a>
+                    <a href="translator.html" class="nav-link center">Translator</a>
+                    <a href="currency-converter.html" class="nav-link center">Currency</a>
+                    <a href="weather.html" class="nav-link center">Weather</a>
+                    <a href="search.html" class="nav-link center">Search</a>
+                    <a href="about-us-page.html" class="nav-link center">About Us</a>
+                    <a href="contact-us-page.html" class="nav-link center">Contact</a>
+                </div>
+            </nav>
+        </div>
+
+        <header class="header-1">
+            <div class="logo" class="header center">
+                <h1>
+                    <span class="center">t</span>
+                    <span class="center">r</span>
+                    <span class="center">a</span>
+                    <span class="center">v</span>
+                    <span class="center">e</span>
+                    <span class="center">l</span>
+                    <span class="center">.</span>
+                    <span class="center">p</span>
+                    <span class="center">l</span>
+                    <span class="center">a</span>
+                    <span class="center">n</span>
+                    <span class="center">n</span>
+                    <span class="center">e</span>
+                    <span class="center">r</span>
+                </h1>
+            </div>
+        </header>
+
+        <section class="weather-section">
+            <h2>Weather Report</h2>
+            <div class="weather-container">
+                <div class="search-box">
+                    <input type="text" id="city-input" placeholder="Enter city name">
+                    <button id="search-btn">Search</button>
+                </div>
+
+                <div class="weather-info">
+                    <div class="location">
+                        <h3 id="city-name">--</h3>
+                        <p id="country">--</p>
+                    </div>
+                    <div class="weather-main">
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <div class="temperature">
+                            <h1 id="temp">--°C</h1>
+                            <p id="description">--</p>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="label">Feels Like</span>
+                            <span id="feels-like">--°C</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Humidity</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Wind Speed</span>
+                            <span id="wind-speed">-- km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-list">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="tours.html" class="footer-link">Tours</a>
+                <a href="about-us-page.html" class="footer-link">About Us</a>
+                <a href="contact-us-page.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-paragraph">
+                &copy; Travel Planner DE Project
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html> 

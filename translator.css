@@ -1,0 +1,171 @@
+.translator-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.header-1{
+    padding-top: 12rem;
+}
+
+.translator-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.language-selectors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.language-select {
+    flex: 1;
+}
+
+.language-select label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.language-select select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.swap-button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.swap-button:hover {
+    background: #357abd;
+}
+
+.translation-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.translation-box {
+    position: relative;
+}
+
+.translation-box textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: none;
+    font-family: inherit;
+}
+
+.translation-box textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.translation-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.translate-button,
+.clear-button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.translate-button {
+    background: #4a90e2;
+    color: white;
+}
+
+.translate-button:hover {
+    background: #357abd;
+}
+
+.clear-button {
+    background: #f8f9fa;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+.clear-button:hover {
+    background: #e9ecef;
+}
+
+.common-phrases {
+    margin-top: 2rem;
+}
+
+.common-phrases h3 {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.phrase-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.phrase-btn {
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.phrase-btn:hover {
+    background: #e9ecef;
+    border-color: #4a90e2;
+    color: #4a90e2;
+}
+
+@media (max-width: 768px) {
+    .translation-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .language-selectors {
+        flex-direction: column;
+    }
+
+    .swap-button {
+        transform: rotate(90deg);
+    }
+
+    .phrase-buttons {
+        grid-template-columns: 1fr;
+    }
+} 

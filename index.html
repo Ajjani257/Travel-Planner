@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>The Road</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <div class="open-navbar-icon navbar-icon center">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="navbar-wrapper">
+        <nav class="navbar">
+          <div class="close-navbar-icon navbar-icon center">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+          </div>
+          <div class="nav-list">
+            <a href="index.html" class="nav-link center">Home</a>
+            <a href="tours.html" class="nav-link center">Tours</a>
+            <a href="expense-tracker.html" class="nav-link center">Expense</a>
+            <a href="translator.html" class="nav-link center">Translator</a>
+            <a href="currency-converter.html" class="nav-link center">Currency</a>
+            <a href="weather.html" class="nav-link center">Weather</a>
+            <a href="search.html" class="nav-link center">Search</a>
+            <a href="about-us-page.html" class="nav-link center">About Us</a>
+            <a href="contact-us-page.html" class="nav-link center">Contact</a>
+            <!-- <a href="login.html" class="nav-link center" id="loginLink" style="display: flex;">Login</a> -->
+            <a href="login.html" class="nav-link center" id="loginLink" style="display: flex;">Login</a>
+            <a href="#" class="nav-link center" id="logoutLink" style="display: none;">Logout</a>
+          </div>
+        </nav>
+      </div>
+      <!-- End of Navbar -->
+
+      <!-- Header -->
+      <header class="header center">
+        <div class="header-text">
+          <h1 class="heading">Around the world</h1>
+          <p class="header-paragraph">
+            "Traveling - it leaves you speechless, then turns you into a
+            storyteller"
+          </p>
+          <div class="login-signup-container">
+            <a href="login.html" class="login-link">Login</a>
+            <a href="signup.html" class="signup-link">Sign Up</a>
+          </div>
+          <br>
+          <!-- <form class="search-form" action="hotel.html" method="GET">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for tours, destinations..."
+              name="query"
+            />
+            <button type="submit" class="search-button">Search</button>
+          </form> -->
+        </div>
+        <img
+          src="air-balloon.png"
+          alt="Header Image"
+          class="header-image"
+        />
+        <div class="logo">
+          <h1>
+            <span class="center">t</span>
+            <span class="center">r</span>
+            <span class="center">a</span>
+            <span class="center">v</span>
+            <span class="center">e</span>
+            <span class="center">l</span>
+            <span class="center">.</span>
+            <span class="center">p</span>
+            <span class="center">l</span>
+            <span class="center">a</span>
+            <span class="center">n</span>
+            <span class="center">n</span>
+            <span class="center">e</span>
+            <span class="center">r</span>
+          </h1>
+        </div>
+
+        
+      </header>
+      <!-- End of Header -->
+
+      <!-- Popular tours -->
+      <section class="popular-tours">
+        <h1 class="popular-tours-heading">The Most Popular Tours</h1>
+        <div class="cards-wrapper">
+          <div class="card">
+            <div class="front-side">
+              <img src="forest.jpg" alt="Forest" class="card-image" />
+              <h1 class="tour-name">The wild forest</h1>
+              <ul class="card-list">
+                <li class="card-list-item">7 days tour</li>
+                <li class="card-list-item">Up to 20 people</li>
+                <li class="card-list-item">4 tour guides</li>
+                <li class="card-list-item">Sleep in private tents</li>
+                <li class="card-list-item">Difficulty: medium</li>
+              </ul>
+              <button class="navigation-button">price &gt;&gt;</button>
+            </div>
+            <div class="back-side center">
+              <button class="navigation-button">&lt;&lt; back</button>
+              <h3 class="tour-price">$399</h3>
+              <a href="booking.html" class="card-button">Booking</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="front-side">
+              <img src="river.jpg" alt="River" class="card-image" />
+              <h1 class="tour-name">Along the river</h1>
+              <ul class="card-list">
+                <li class="card-list-item">9 days tour</li>
+                <li class="card-list-item">Up to 30 people</li>
+                <li class="card-list-item">7 tour guides</li>
+                <li class="card-list-item">Sleep in private tents</li>
+                <li class="card-list-item">Difficulty: hard</li>
+              </ul>
+              <button class="navigation-button">price &gt;&gt;</button>
+            </div>
+            <div class="back-side center">
+              <button class="navigation-button">&lt;&lt; back</button>
+              <h3 class="tour-price">$499</h3>
+              <a href="booking.html" class="card-button">Booking</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="front-side">
+              <img src="sea.jpg" alt="Sea" class="card-image" />
+              <h1 class="tour-name">The island beach</h1>
+              <ul class="card-list">
+                <li class="card-list-item">5 days tour</li>
+                <li class="card-list-item">Up to 40 people</li>
+                <li class="card-list-item">8 tour guides</li>
+                <li class="card-list-item">Sleep in hotel</li>
+                <li class="card-list-item">Difficulty: easy</li>
+              </ul>
+              <button class="navigation-button">price &gt;&gt;</button>
+            </div>
+            <div class="back-side center">
+              <button class="navigation-button">&lt;&lt; back</button>
+              <h3 class="tour-price">$599</h3>
+              <a href="booking.html" class="card-button">Booking</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card">
+            <div class="front-side">
+              <img src="forest.jpg" alt="Forest" class="card-image" />
+              <h1 class="tour-name">The wild forest</h1>
+              <ul class="card-list">
+                <li class="card-list-item">7 days tour</li>
+                <li class="card-list-item">Up to 20 people</li>
+                <li class="card-list-item">4 tour guides</li>
+                <li class="card-list-item">Sleep in private tents</li>
+                <li class="card-list-item">Difficulty: medium</li>
+              </ul>
+              <button class="navigation-button">price &gt;&gt;</button>
+            </div>
+            <div class="back-side center">
+              <button class="navigation-button">&lt;&lt; back</button>
+              <h3 class="tour-price">$399</h3>
+              <a href="booking.html" class="card-button">Booking</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="front-side">
+              <img src="river.jpg" alt="River" class="card-image" />
+              <h1 class="tour-name">Along the river</h1>
+              <ul class="card-list">
+                <li class="card-list-item">9 days tour</li>
+                <li class="card-list-item">Up to 30 people</li>
+                <li class="card-list-item">7 tour guides</li>
+                <li class="card-list-item">Sleep in private tents</li>
+                <li class="card-list-item">Difficulty: hard</li>
+              </ul>
+              <button class="navigation-button">price &gt;&gt;</button>
+            </div>
+            <div class="back-side center">
+              <button class="navigation-button">&lt;&lt; back</button>
+              <h3 class="tour-price">$499</h3>
+              <a href="booking.html" class="card-button">Booking</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="front-side">
+              <img src="sea.jpg" alt="Sea" class="card-image" />
+              <h1 class="tour-name">The island beach</h1>
+              <ul class="card-list">
+                <li class="card-list-item">5 days tour</li>
+                <li class="card-list-item">Up to 40 people</li>
+                <li class="card-list-item">8 tour guides</li>
+                <li class="card-list-item">Sleep in hotel</li>
+                <li class="card-list-item">Difficulty: easy</li>
+              </ul>
+              <button class="navigation-button">price &gt;&gt;</button>
+            </div>
+            <div class="back-side center">
+              <button class="navigation-button">&lt;&lt; back</button>
+              <h3 class="tour-price">$599</h3>
+              <a href="booking.html" class="card-button">Booking</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Popular tours -->
+
+      <!-- Stories -->
+      <section class="stories">
+        <div class="video-container">
+          <video class="bg-video" autoplay muted loop>
+            <source src="vid.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="stories-wrapper">
+          <div class="story-bg">
+            <div class="story">
+              <img
+                src="story-img-1.jpg"
+                alt="Customer image"
+                class="story-image"
+              />
+              <div class="story-text">
+                <h1 class="story-heading">
+                  These were the best days of this year
+                </h1>
+                <p class="story-paragraph">
+                  "Our trip with Travel Planner was absolutely unforgettable! Every detail was taken care of, and we discovered hidden gems we never would have found on our own. Highly recommended!"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="story-bg">
+            <div class="story">
+              <img
+                src="story-img-2.jpg"
+                alt="Customer image"
+                class="story-image"
+              />
+              <div class="story-text">
+                <h1 class="story-heading">I enjoyed this great tour</h1>
+                <p class="story-paragraph">
+                  "From the moment we landed, everything was seamless. The tours were well-organized, and the guides were knowledgeable and friendly. We made memories that will last a lifetime."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-bg">
+            <div class="story">
+              <img
+                src="story-img-1.jpg"
+                alt="Customer image"
+                class="story-image"
+              />
+              <div class="story-text">
+                <h1 class="story-heading">I enjoyed this great tour</h1>
+                <p class="story-paragraph">
+                  "Travel Planner made our dream vacation a reality. The personalized itinerary fit our interests perfectly, and the support team was always available to help. Can't wait for our next adventure!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Stories -->
+
+      <!-- Contact -->
+      <section class="contact">
+        <h1 class="contact-heading">Contact Us</h1>
+        <form class="contact-form center">
+          <div class="input-groups">
+            <div class="input-group">
+              <label>Full Name *</label>
+              <input
+                type="text"
+                class="contact-input"
+                placeholder="Enter Your Name"
+              />
+            </div>
+            <div class="input-group">
+              <label>Email *</label>
+              <input
+                type="email"
+                class="contact-input"
+                placeholder="Enter Your Email"
+              />
+            </div>
+            <div class="input-group">
+              <label>Phone</label>
+              <input
+                type="text"
+                class="contact-input"
+                placeholder="Enter Phone Number"
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Message</label>
+            <textarea
+              class="form-textarea"
+              placeholder="Your Message Here..."
+            ></textarea>
+          </div>
+          <input type="submit" value="Submit" class="form-btn" />
+        </form>
+      </section>
+      <!-- End of Contact -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-list">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="tours.html" class="footer-link">Tours</a>
+          <a href="about-us-page.html" class="footer-link">About Us</a>
+          <a href="contact-us-page.html" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-paragraph">
+          &copy; Travel Planner DE Project
+        </p>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+    <!-- Firebase SDK -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script> -->
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script type="module">
+      // Your Firebase configuration
+      // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        const firebaseConfig = {
+    apiKey: "AIzaSyChoOx4_Mdfqq2ANTbYTSgsyfngJik5P1Y",
+    authDomain: "travelplannerauth.firebaseapp.com",
+    projectId: "travelplannerauth",
+    storageBucket: "travelplannerauth.firebasestorage.app",
+    messagingSenderId: "328179473750",
+    appId: "1:328179473750:web:cbc173d66cc2a181ff4af7"
+  };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // const app = initializeApp(firebaseConfig);
+
+        // Get elements
+        const loginLink = document.getElementById('loginLink');
+        const logoutLink = document.getElementById('logoutLink');
+
+        // Check authentication state
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in
+                loginLink.style.display = 'none';
+                logoutLink.style.display = 'block';
+            } else {
+                // User is signed out
+                loginLink.style.display = 'block';
+                logoutLink.style.display = 'none';
+            }
+        });
+
+        // Logout functionality
+        logoutLink.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                await firebase.auth().signOut();
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Error signing out:', error);
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

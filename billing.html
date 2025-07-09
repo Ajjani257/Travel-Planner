@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="billing.css">
+    <title>Checkout Form</title>
+</head>
+<body>
+    
+    <!-- Heading starts here -->
+    <hgroup class="heading">
+        <h1 class="major">Checkout Form</h1>
+    </hgroup>
+    <!-- End heading -->
+
+    <!-- Main content -->
+    <form class="checkout" onsubmit="redirectToInvoice(event)">
+        <div class="checkout-header">
+            <h1 class="checkout-title">
+                Checkout
+                <span class="checkout-price">$1,200.00</span>
+            </h1>
+        </div>
+        <p>
+            <input type="text" class="checkout-input checkout-name" placeholder="Your name" required autofocus>
+            <input type="text" class="checkout-input checkout-exp" placeholder="MM" required>
+            <input type="text" class="checkout-input checkout-exp" placeholder="YY" required>
+        </p>
+        <p>
+            <input type="text" class="checkout-input checkout-card" placeholder="4111 1111 1111 1111" required>
+            <input type="text" class="checkout-input checkout-cvc" placeholder="CVC" required>
+        </p>
+        <p>
+            <input type="submit" value="Purchase" class="checkout-btn">
+        </p>
+    </form>
+    <!-- End of main content -->
+
+    <!-- About footer starts here -->
+    <div class="about">
+        <p class="about-links">
+            <a target="_blank" title="WordPress developer with strong skills in HTML and CSS">Travel Planner</a>
+            <a target="_blank" title="SEO training in Chandigarh, Mohali and Panchkula">DE Project</a>
+        </p>
+        <p class="about-author">
+            &copy; 2024 <a target="_blank">Sania Karia</a> -
+            <a target="_blank">DE Travel Planner Project</a><br>
+        </p>
+    </div>
+    <!-- About footer ends here -->
+
+    <script>
+        function redirectToInvoice(event) {
+            event.preventDefault(); // Prevent normal form submission
+            window.location.href = 'invoice.html'; // Redirect to invoice.html
+        }
+    </script>
+
+</body>
+</html>

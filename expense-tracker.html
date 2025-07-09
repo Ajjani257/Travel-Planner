@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner - Expense Tracker</title>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="expense-tracker.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="open-navbar-icon navbar-icon center">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <div class="close-navbar-icon navbar-icon center">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                </div>
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link center">Home</a>
+                    <a href="tours.html" class="nav-link center">Tours</a>
+                    <a href="expense-tracker.html" class="nav-link center">Expense</a>
+                    <a href="translator.html" class="nav-link center">Translator</a>
+                    <a href="currency-converter.html" class="nav-link center">Currency</a>
+                    <a href="weather.html" class="nav-link center">Weather</a>
+                    <a href="search.html" class="nav-link center">Search</a>
+                    <a href="about-us-page.html" class="nav-link center">About Us</a>
+                    <a href="contact-us-page.html" class="nav-link center">Contact</a>
+                </div>
+            </nav>
+        </div>
+
+        <header class="header-1">
+            <div class="logo" class="header center">
+                <h1>
+                    <span class="center">t</span>
+                    <span class="center">r</span>
+                    <span class="center">a</span>
+                    <span class="center">v</span>
+                    <span class="center">e</span>
+                    <span class="center">l</span>
+                    <span class="center">.</span>
+                    <span class="center">p</span>
+                    <span class="center">l</span>
+                    <span class="center">a</span>
+                    <span class="center">n</span>
+                    <span class="center">n</span>
+                    <span class="center">e</span>
+                    <span class="center">r</span>
+                </h1>
+            </div>
+        </header>
+
+        <section class="expense-tracker">
+            <div class="budget-section">
+                <h2>Set Your Travel Budget</h2>
+                <div class="budget-input">
+                    <input type="number" id="budget-amount" placeholder="Enter your budget">
+                    <button id="set-budget">Set Budget</button>
+                </div>
+                <div class="budget-display">
+                    <div class="total-budget">
+                        <h3>Total Budget</h3>
+                        <p id="total-budget">$0</p>
+                    </div>
+                    <div class="remaining-budget">
+                        <h3>Remaining Budget</h3>
+                        <p id="remaining-budget">$0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expense-section">
+                <h2>Add Expense</h2>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <input type="text" id="expense-description" placeholder="Description" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="expense-amount" placeholder="Amount" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="expense-category" required>
+                            <option value="">Select Category</option>
+                            <option value="accommodation">Accommodation</option>
+                            <option value="food">Food</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="activities">Activities</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit">Add Expense</button>
+                </form>
+            </div>
+
+            <div class="expenses-list">
+                <h2>Expenses</h2>
+                <div class="expenses-filter">
+                    <select id="filter-category">
+                        <option value="all">All Categories</option>
+                        <option value="accommodation">Accommodation</option>
+                        <option value="food">Food</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="activities">Activities</option>
+                        <option value="shopping">Shopping</option>
+                    </select>
+                </div>
+                <div id="expenses-container"></div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-list">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="tours.html" class="footer-link">Tours</a>
+                <a href="about-us-page.html" class="footer-link">About Us</a>
+                <a href="contact-us-page.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-paragraph">
+                &copy; Travel Planner DE Project
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="expense-tracker.js"></script>
+</body>
+
+</html>

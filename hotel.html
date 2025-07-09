@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Planner</title>
+  <link rel="stylesheet" href="hotel.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="container">
+    <!-- Navbar -->
+    <div class="open-navbar-icon navbar-icon center">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <div class="close-navbar-icon navbar-icon center">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+        </div>
+        <div class="nav-list">
+          <a href="index.html" class="nav-link center">Home</a>
+          <a href="tours.html" class="nav-link center">Tours</a>
+          <a href="expense-tracker.html" class="nav-link center">Expense</a>
+          <a href="translator.html" class="nav-link center">Translator</a>
+          <a href="currency-converter.html" class="nav-link center">Currency</a>
+          <a href="weather.html" class="nav-link center">Weather</a>
+          <a href="search.html" class="nav-link center">Search</a>
+          <a href="about-us-page.html" class="nav-link center">About Us</a>
+          <a href="contact-us-page.html" class="nav-link center">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <header>
+      <div class="logo" class="header center">
+        <h1>
+          <span class="center">t</span>
+          <span class="center">r</span>
+          <span class="center">a</span>
+          <span class="center">v</span>
+          <span class="center">e</span>
+          <span class="center">l</span>
+          <span class="center">.</span>
+          <span class="center">p</span>
+          <span class="center">l</span>
+          <span class="center">a</span>
+          <span class="center">n</span>
+          <span class="center">n</span>
+          <span class="center">e</span>
+          <span class="center">r</span>
+        </h1>
+      </div>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Main Content -->
+    <main>
+      <section class="search">
+        <div class="search-box">
+          <div class="flight-options">
+            <button class="active"><a href="hotel.html">Hotels</a></button>
+            <button><a href="flights.html">Flights</a></button>
+          </div>
+
+          <form>
+            <div class="input-group">
+              <label for="from">From</label>
+              <input type="text" id="from" placeholder="New Delhi">
+            </div>
+            <div class="input-group">
+              <label for="to">To</label>
+              <input type="text" id="to" placeholder="Goa">
+            </div>
+            <div class="input-group">
+              <pre>
+                          <label for="departure">Departure and Return</label>
+                          <input type="date" id="departure" placeholder="6.02.24 To 9.02.24"> <input type="date" id="return" placeholder="6.02.24 To 9.02.24">
+                        </pre>
+
+            </div>
+            <button class="search-btn">Search</button>
+          </form>
+        </div>
+      </section>
+
+
+      <section class="hotels-section">
+        <div class="filters">
+          <h3>Filters</h3>
+          <label>Your Budget (per night)</label>
+          <input type="number" placeholder="Min">
+          <input type="number" placeholder="Max">
+          <button>Apply</button>
+          <h4>Locality (area)</h4>
+          <label><input type="checkbox"> Anjuna</label>
+          <label><input type="checkbox"> South Goa</label>
+          <label><input type="checkbox"> North Goa</label>
+        </div>
+
+        <div class="hotel-list">
+          <div class="hotel">
+            <img src="hotel1.jpg" alt="Hotel Casa De Patio">
+            <h3>Hotel Casa De Patio</h3>
+            <p>$120 + Taxes</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+          <div class="hotel">
+            <img src="hotel2.jpg" alt="Coco Resort">
+            <h3>Coco Resort</h3>
+            <p>$95 + Taxes</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+          <div class="hotel">
+            <img src="hotel3.jpg" alt="Hotel Casa De Patio">
+            <h3>Hotel Casa De Patio</h3>
+            <p>$110 + Taxes</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+          <div class="hotel">
+            <img src="hotel4.jpg" alt="Coco Resort">
+            <h3>Coco Resort</h3>
+            <p>$150 + Taxes</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+          <!-- More hotels here -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-list">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="tours.html" class="footer-link">Tours</a>
+        <a href="about-us-page.html" class="footer-link">About Us</a>
+        <a href="contact-us-page.html" class="footer-link">Contact</a>
+      </div>
+      <p class="footer-paragraph">
+        &copy; Travel Planner DE Project
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

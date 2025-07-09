@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Travel Planner</title>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Vollkorn', serif;
+            font-size: 16px;
+        }
+
+        .auth-button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Vollkorn', serif;
+            margin-top: 10px;
+        }
+
+        .auth-button:hover {
+            background-color: #45a049;
+        }
+
+        .auth-links {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .auth-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #ff0000;
+            text-align: center;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .success-message {
+            color: #4CAF50;
+            text-align: center;
+            margin: 10px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="open-navbar-icon navbar-icon center">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <div class="close-navbar-icon navbar-icon center">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                </div>
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link center">Home</a>
+                    <a href="tours.html" class="nav-link center">Tours</a>
+                    <a href="expense-tracker.html" class="nav-link center">Expense</a>
+                    <a href="translator.html" class="nav-link center">Translator</a>
+                    <a href="currency-converter.html" class="nav-link center">Currency</a>
+                    <a href="weather.html" class="nav-link center">Weather</a>
+                    <a href="search.html" class="nav-link center">Search</a>
+                    <a href="about-us-page.html" class="nav-link center">About Us</a>
+                    <a href="contact-us-page.html" class="nav-link center">Contact</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="auth-container">
+            <h1 class="popular-tours-heading">Login</h1>
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" id="forgotPassword">Forgot Password?</a>
+                <a href="signup.html">Create Account</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-list">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="tours.html" class="footer-link">Tours</a>
+                <a href="about-us-page.html" class="footer-link">About Us</a>
+                <a href="contact-us-page.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-paragraph">
+                &copy; Travel Planner DE Project
+            </p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+     -->
+
+     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script type="module">
+        // Your Firebase configuration
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+
+        const firebaseConfig = {
+    apiKey: "AIzaSyChoOx4_Mdfqq2ANTbYTSgsyfngJik5P1Y",
+    authDomain: "travelplannerauth.firebaseapp.com",
+    projectId: "travelplannerauth",
+    storageBucket: "travelplannerauth.appspot.com",
+    messagingSenderId: "328179473750",
+    appId: "1:328179473750:web:cbc173d66cc2a181ff4af7"
+  };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // const app = initializeApp(firebaseConfig);
+
+        // Get elements
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const forgotPasswordLink = document.getElementById('forgotPassword');
+
+        // Login form submission
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                errorMessage.textContent = 'Please enter both email and password';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            try {
+                await firebase.auth().signInWithEmailAndPassword(email, password);
+                successMessage.textContent = 'Login successful!';
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                // Redirect to home page after successful login
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } catch (error) {
+                errorMessage.textContent = error.message;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+        });
+
+        // Forgot password functionality
+        forgotPasswordLink.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            if (!email) {
+                errorMessage.textContent = 'Please enter your email address';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            try {
+                await firebase.auth().sendPasswordResetEmail(email);
+                successMessage.textContent = 'Password reset email sent! Please check your inbox.';
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+            } catch (error) {
+                errorMessage.textContent = error.message;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 

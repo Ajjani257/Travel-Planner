@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="flights.css" />
+  <title>The Road</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="open-navbar-icon navbar-icon center">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <div class="close-navbar-icon navbar-icon center">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+        </div>
+        <div class="nav-list">
+          <a href="index.html" class="nav-link center">Home</a>
+          <a href="tours.html" class="nav-link center">Tours</a>
+          <a href="expense-tracker.html" class="nav-link center">Expense</a>
+          <a href="translator.html" class="nav-link center">Translator</a>
+          <a href="currency-converter.html" class="nav-link center">Currency</a>
+          <a href="weather.html" class="nav-link center">Weather</a>
+          <a href="search.html" class="nav-link center">Search</a>
+          <a href="about-us-page.html" class="nav-link center">About Us</a>
+          <a href="contact-us-page.html" class="nav-link center">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <header>
+      <div class="logo" class="header center">
+        <h1>
+          <span class="center">t</span>
+          <span class="center">r</span>
+          <span class="center">a</span>
+          <span class="center">v</span>
+          <span class="center">e</span>
+          <span class="center">l</span>
+          <span class="center">.</span>
+          <span class="center">p</span>
+          <span class="center">l</span>
+          <span class="center">a</span>
+          <span class="center">n</span>
+          <span class="center">n</span>
+          <span class="center">e</span>
+          <span class="center">r</span>
+        </h1>
+      </div>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="search">
+      <div class="search-box">
+        <div class="flight-options">
+          <button id="button"> <a href="hotel.html"> Hotels </a></button>
+          <button id="button" class="active"> <a href="flights.html"> Flights </a></button>
+        </div>
+
+        <form>
+          <div class="input-group">
+            <label for="from">From</label>
+            <input type="text" id="from" placeholder="New Delhi">
+          </div>
+          <div class="input-group">
+            <label for="to">To</label>
+            <input type="text" id="to" placeholder="Goa">
+          </div>
+          <div class="input-group">
+            <pre>
+<label for="departure">Departure and Return</label>
+<input type="date" id="departure" placeholder="06.02.24 To 09.02.24"> <input type="date" id="return" placeholder="06.02.24 To 09.02.24">
+</pre>
+          </div>
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Filters and Flights Section -->
+    <section class="main">
+      <aside class="filters">
+        <h3>Filters</h3>
+        <h4>Stops</h4>
+        <label><input type="checkbox" checked> Any</label>
+        <label><input type="checkbox"> Direct only</label>
+        <label><input type="checkbox"> One stop</label>
+        <br>
+        <h4>Airlines</h4>
+        <label><input type="checkbox" checked> Air India</label>
+        <label><input type="checkbox"> Indigo</label>
+        <label><input type="checkbox"> Vistara</label>
+        <label><input type="checkbox"> Spicejet</label>
+      </aside>
+
+      <div class="flights">
+        <h3>Flights</h3>
+
+        <!-- Flight 1 -->
+        <div class="flight">
+          <div class="flight-details">
+            <h4>08:00 <span>New Delhi</span> to <span>Goa</span></h4>
+            <p>02 h 40 m | 1 stop at Mumbai</p>
+            <p>Airbus A7565 | Economy</p>
+          </div>
+          <div class="flight-price">
+            <p>Baggage: 15+7 Kgs</p>
+            <p>$xx,xxx</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+        </div>
+
+        <!-- Flight 2 -->
+        <div class="flight">
+          <div class="flight-details">
+            <h4>12:30 <span>New Delhi</span> to <span>Goa</span></h4>
+            <p>02 h 15 m | Direct flight</p>
+            <p>Boeing 737 | Economy</p>
+          </div>
+          <div class="flight-price">
+            <p>Baggage: 20+7 Kgs</p>
+            <p>$xx,xxx</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+        </div>
+
+        <!-- Flight 3 -->
+        <div class="flight">
+          <div class="flight-details">
+            <h4>15:00 <span>New Delhi</span> to <span>Goa</span></h4>
+            <p>02 h 15 m | Direct flight</p>
+            <p>Boeing 737 | Economy</p>
+          </div>
+          <div class="flight-price">
+            <p>Baggage: 20+7 Kgs</p>
+            <p>$xx,xxx</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+        </div>
+
+        <!-- Flight 4 -->
+        <div class="flight">
+          <div class="flight-details">
+            <h4>18:00 <span>New Delhi</span> to <span>Goa</span></h4>
+            <p>02 h 15 m | Direct flight</p>
+            <p>Boeing 737 | Economy</p>
+          </div>
+          <div class="flight-price">
+            <p>Baggage: 20+7 Kgs</p>
+            <p>$xx,xxx</p>
+            <a href="billing.html"><button>Select</button></a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <footer class="footer">
+      <div class="footer-list">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="tours.html" class="footer-link">Tours</a>
+        <a href="about-us-page.html" class="footer-link">About Us</a>
+        <a href="contact-us-page.html" class="footer-link">Contact</a>
+      </div>
+      <p class="footer-paragraph">
+        &copy; Travel Planner DE Project
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
